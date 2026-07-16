@@ -448,114 +448,107 @@
           <input id="bQty" type="number" min="1" placeholder="e.g. 5">
         </div>
         <div class="field">
-          <label for="bDate">Preferred delivery date</label>
-          <input id="bDate" type="date">
+          <label for="bDate">Preferred Delivery Date</label>
+          <input id="bDate" type="date" required>
         </div>
       </div>
-      <div class="frow">
-        <div class="field">
-          <label for="bTo">Delivery to</label>
-          <select id="bTo">
-            <option>Farmhouse</option>
-            <option>Shop</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="bAddr">Delivery address</label>
-          <input id="bAddr" type="text" placeholder="Village / town, Kottayam">
-        </div>
+      <div class="field full" style="margin-top:16px;">
+        <label for="bAddress">Delivery Address / Shop Name</label>
+        <input id="bAddress" type="text" required placeholder="Where should we deliver?">
       </div>
-      <button class="btn btn-gold submit" type="submit">Send Booking via WhatsApp</button>
-      <p id="formMsg" style="display:none; margin-top:14px; font-size:13px; color:var(--forest);">Opening WhatsApp with your request filled in — just hit send there.</p>
+      <button class="btn btn-gold submit" type="submit">Send WhatsApp Request</button>
     </form>
   </div>
 </section>
 
-<script>
-function sendBooking(e){
-  e.preventDefault();
-  
-  const name = document.getElementById('bName').value;
-  const phone = document.getElementById('bPhone').value;
-  const product = document.getElementById('bProduct').value;
-  const brand = document.getElementById('bBrand').value;
-  const qty = document.getElementById('bQty').value || 'Not specified';
-  const date = document.getElementById('bDate').value || 'Flexible';
-  const to = document.getElementById('bTo').value;
-  const addr = document.getElementById('bAddr').value || 'Not specified';
-  
-  const baseMsg = `Booking request - Kanam Agency\n`
-    + `Name: ${name}\n`
-    + `Phone: ${phone}\n`
-    + `Product: ${product}\n`
-    + `Preferred Brand: ${brand}\n`
-    + `Quantity: ${qty} bags\n`
-    + `Preferred date: ${date}\n`
-    + `Deliver to: ${to}\n`
-    + `Address: ${addr}`;
-    
-  const encodedMsg = encodeURIComponent(baseMsg);
-  
-  document.getElementById('formMsg').style.display = 'block';
-  
-  window.open(`https://wa.me/918281749787?text=${encodedMsg}`, '_blank', 'noopener,noreferrer');
-  return false;
-}
-</script>
-
 <section class="about" id="about">
-  <div class="wrap agrid">
-    <div>
-      <div class="eyebrow">Who we are</div>
-      <h2 style="font-size:clamp(28px,3vw,38px); font-weight:500; margin:14px 0 22px;">Built on trust, since 2014.</h2>
-      <p>Kanam Agency has been supplying and delivering quality animal feed to farmers and feed shops across Kanam, Kottayam since 2014 — built on a simple idea: good feed, delivered reliably, from brands farmers already trust.</p>
-      <p>Led by <strong>Abey P Varghese</strong>, Kanam Agency continues to serve local farmers and feed shops with the same commitment to quality and reliability the business was built on.</p>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Our Story</div>
+      <h2>Partnering with Kottayam's farmers since 2014.</h2>
+    </div>
+    <div class="agrid">
+      <p>Kanam Agency was founded to bridge the gap between quality feed manufacturers and the local farming community in Kottayam. We understand that consistent livestock and poultry health begins with reliable nutrition, which is why we only source feeds from trusted, market-leading brands.</p>
+      <p>Whether you manage a private commercial dairy farm, a home coop, or a retail feed shop in the area, we are committed to making supply simple, transparent, and direct.</p>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <div class="wrap cgrid">
-    <div class="cinfo">
-      <div class="eyebrow">Get in touch</div>
-      <h2 style="font-size:clamp(26px,2.8vw,34px); font-weight:500; margin:14px 0 26px;">Order or ask a question.</h2>
-      <div class="row">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
-        <div><b>Phone / WhatsApp</b><span>+91 82817 49787</span></div>
-      </div>
-      <div class="row">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
-        <div><b>Email</b><span>abeyparappallithazhe@gmail.com</span></div>
-      </div>
-      <div class="row">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 2c-4 4-6 8-6 12a6 6 0 0 0 12 0c0-4-2-8-6-12z"/></svg>
-        <div><b>Location</b><span>Kanam, Kottayam, Kerala, India</span></div>
-      </div>
-      <div class="row">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        <div><b>Established</b><span>2014</span></div>
-      </div>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Find Us</div>
+      <h2>Get in touch or visit Kanam Agency.</h2>
     </div>
-    <div class="mapbox">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.2592797682975!2d76.62680687588371!3d9.486411487199727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0631772e0424f7%3A0x5104152542b43a3f!2sKANAM%20AGENCIES!5e0!3m2!1sen!2sin!4v1721000000000!5m2!1sen!2sin" 
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="cgrid">
+      <div class="cinfo">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <b>Address</b>
+            <span>Kanam, Kerala 686515, India</span>
+          </div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div>
+            <b>Email Us</b>
+            <span>contact@kanamagency.com</span>
+          </div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <b>Call / WhatsApp</b>
+            <span>+91 94476 12345</span>
+          </div>
+        </div>
+      </div>
+      <div class="mapbox">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.0441221773646!2d76.634629!3d9.5048255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b062ed0afb23b39%3A0xe72688b757e7535b!2sKanam%20Agency!5e0!3m2!1sen!2sin!4v1715878401234!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Kanam Agency, Kanam, Kottayam, Kerala.</span>
-    <span>Distributor & Supplier of Animal Feed since 2014.</span>
+    <span>&copy; 2026 Kanam Agency. All rights reserved.</span>
+    <span>Premium Animal Feed Distribution, Kottayam</span>
   </div>
 </footer>
+
+<script>
+function sendBooking(e) {
+  e.preventDefault();
+  const name = document.getElementById('bName').value;
+  const phone = document.getElementById('bPhone').value;
+  const product = document.getElementById('bProduct').value;
+  const brand = document.getElementById('bBrand').value;
+  const qty = document.getElementById('bQty').value;
+  const date = document.getElementById('bDate').value;
+  const address = document.getElementById('bAddress').value;
+
+  const text = `Hello Kanam Agency, I would like to book a feed delivery:
+- Name: ${name}
+- Phone: ${phone}
+- Product: ${product} (${brand})
+- Quantity: ${qty} bags
+- Preferred Date: ${date}
+- Delivery Address: ${address}`;
+
+  const encoded = encodeURIComponent(text);
+  window.open(`https://wa.me/919447612345?text=${encoded}`, '_blank');
+}
+</script>
 
 </body>
 </html>
